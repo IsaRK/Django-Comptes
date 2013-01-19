@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <link rel="stylesheet" href="/media/css/style.css" />
+</head>
+{{ form.non_field_errors }}
+<body>
+
+<form action="{% url compte.views.ajout %}" method="post">{% csrf_token %}
+{% for champ in form %}
+	{{ champ.errors }}
+	{%if champ.label == "Categorie" %}
+		<p> {{ champ.label }} {{ champ }} <a href="/compte/ajoutCategorie">Ajouter</a> </p>
+	{% else %}
+		<p> {{ champ.label }} {{ champ }}</p>
+	{% endif %}
+{% endfor %}
+<input type="submit" value="Submit" />
+<input name = "submitAnotherOne" type="submit" value="Submit and add another one" />
+<input name="cancel" type="submit" value="Cancel" />
+</form>
+
+</body>
+</html>

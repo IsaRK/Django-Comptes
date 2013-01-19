@@ -1,0 +1,15 @@
+
+{% if all_compte_list %}
+    <ul>
+    {% for compte in all_compte_list %}
+        <li>{{ compte.date }} -- {{ compte.mntTotal }} -- 
+			{{ compte.mnt }} -- {{ compte.user.nom }} --
+			{{ compte.motif }}
+		<a href="/compte/detail/modifier/{{compte.id }}">Modifier</a>
+		<a href="/compte/detail/supprimer/{{compte.id }}">Supprimer</a>	
+		</li>
+    {% endfor %}	
+    </ul>
+{% else %}
+    <p>Pas de comptes disponibles.</p>
+{% endif %}

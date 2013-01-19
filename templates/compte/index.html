@@ -1,0 +1,18 @@
+{% extends "compte/base.html" %}
+{% block extrahead %}
+{{ calcul_user }} doit {{ calcul_sum }}
+{% endblock %}
+<a href="/compte/ajout">Ajouter</a>
+
+{% block content %}
+{% if latest_compte_list %}
+    <ul>
+    {% for compte in latest_compte_list %}
+        <li>{{ compte.date }} -- {{ compte.mntTotal }} -- 
+			{{ compte.mnt }} </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Pas de comptes disponibles.</p>
+{% endif %}
+{% endblock %}

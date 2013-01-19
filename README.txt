@@ -8,4 +8,4 @@ Developpement :
    - Base de données : SQLite3
 
 GITHUB : 
-   - Dépo du code source de l'application : https://github.com/IsabelleRiverain/Django-Comptes
+   - Dépo du code source de l'application : https://github.com/IsaRK/Django-Comptes
